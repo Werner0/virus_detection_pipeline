@@ -20,3 +20,10 @@ The following installation steps are only an example. Other approaches are also 
 7. Unzip Pfam-A.hmm.gz 
 8. Index the unzipped HMM models: `hmmpress Pfam-A.hmm`
 9. Run `python virus_pipeline.py -h` for pipeline help output
+
+
+### Pipeline output:
+
+- `./viralflye_output` with virus candidates in `circulars_viralFlye.fasta` and `linears_viralFlye.fasta`, if found
+- `./metaflye_output` with intermediary files including MAG contigs in `assembly.fasta`
+- `./werner.log` or a log file by another name if the `-l` flag was used
