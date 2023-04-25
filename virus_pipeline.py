@@ -77,23 +77,22 @@ def main():
         quit()
 
     metaflye_command = ["flye", "--"+args.READTYPE, args.FASTA, 
-                        "--threads", args.THREADS, "-o", "./metaflye_output"]
+                        "--threads", args.THREADS, "-o", "metaflye_output"]
     metaflye_command_print = " ".join(str(n) for n in metaflye_command)
     logging.info("metaFlye command: {}".format(metaflye_command_print))
     if args.DRYRUN is False:
         metaflye_output = subprocess.check_output(metaflye_command)
-        logging.info("metaFlye output saved in: {}".format("./metaflye_output"))
+        logging.info("metaFlye output saved in: {}".format("metaflye_output"))
 
     # Run viralFlye
-    time.sleep(30)
     os.chdir(oscwd)
-    viralflye_command = [args.VIRALFLYE, "--dir ./metaflye_output --reads", args.FASTA, 
-                        "--hmm", args.HMM, "--threads", args.THREADS, "--outdir", "./viralflye_output"]
+    viralflye_command = [args.VIRALFLYE, "--dir", "metaflye_output", "--reads", args.FASTA, 
+                        "--hmm", args.HMM, "--threads", args.THREADS, "--outdir", "viralflye_output"]
     viralflye_command_print = " ".join(str(n) for n in viralflye_command)
     logging.info("viralFlye command: {}".format(viralflye_command_print))
     if args.DRYRUN is False:
         metaflye_output = subprocess.check_output(viralflye_command)
-        logging.info("viralFlye output saved in: {}".format("./viralflye_output"))
+        logging.info("viralFlye output saved in: {}".format("viralflye_output"))
     logging.info("Viral detection pipeline has finished")
 
     # Finish
