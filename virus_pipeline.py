@@ -1,8 +1,6 @@
 # Virus detection pipeline
-# Requirements: metaFlye, viralFlye, PFAM HMM db and a long read NGS dataset in fasta format
-    # METAFLYE & VIRALFLYE ENV: conda env create -f virus_pipeline_conda.yml (create myclone environment)
-    # VIRALFLYE: git clone https://github.com/Dmitry-Antipov/viralFlye (download viralFlye binaries)
-    # PFAM: https://www.ebi.ac.uk/interpro/download/pfam/ (download PFAM HMM models)
+# Requirements: metaFlye, viralFlye, PFAM HMM models and a long read mNGS dataset in fasta format
+# See installation instruction at : https://github.com/Werner0/virus_detection_pipeline
 # USAGE: virus_pipeline.py -h
 # OUTPUT: Circular and linear virus construct(s). Intermediary files include microbial MAGs.
 
