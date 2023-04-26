@@ -8,8 +8,8 @@
 
 import importlib
 
-# Check whether argparse, logging, subprocess, os and time are installed
-packages = ['argparse', 'logging', 'subprocess', 'os', 'time']
+# Check whether argparse, logging, subprocess, and os are installed
+packages = ['argparse', 'logging', 'subprocess', 'os']
 not_installed = []
 
 for package in packages:
@@ -26,7 +26,6 @@ import argparse
 import logging
 import subprocess
 import os
-import time
 
 # Initialize argument parser
 parser = argparse.ArgumentParser(prog = 'Werner\'s virus finder',
@@ -91,7 +90,7 @@ def main():
     viralflye_command_print = " ".join(str(n) for n in viralflye_command)
     logging.info("viralFlye command: {}".format(viralflye_command_print))
     if args.DRYRUN is False:
-        metaflye_output = subprocess.check_output(viralflye_command)
+        viralflye_output = subprocess.check_output(viralflye_command)
         logging.info("viralFlye output saved in: {}".format("viralflye_output"))
     logging.info("Viral detection pipeline has finished")
 
