@@ -75,7 +75,7 @@ def main():
             logging.error("metaflye could not be found in your path")
             quit()
 
-    metaflye_command = ["flye", "--"+args.READTYPE, args.FASTA, 
+    metaflye_command = ["flye", "--meta", "--"+args.READTYPE, args.FASTA, 
                         "--threads", args.THREADS, "-o", "metaflye_output"]
     metaflye_command_print = " ".join(str(n) for n in metaflye_command)
     if args.SKIPMFLYE is False:
